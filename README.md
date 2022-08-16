@@ -30,3 +30,5 @@ The name of the app comes from the tipical expression from classic comic books, 
 - [GitPod](https://gitpod.io/) - as development environment.
 - [Heroku](https://heroku.com/) - as cloud based platform to deploy the web app on.
 - [PostgreSQL](https://postgresql.org/) - as database.
+- [DJ database url](https://pypi.org/project/dj-database-url/) - database setup.
+- [Psycopg](https://pypi.org/project/psycopg2/) - PostgreSQL database adapter for Python.

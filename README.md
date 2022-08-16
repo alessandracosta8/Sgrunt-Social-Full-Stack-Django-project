@@ -28,3 +28,5 @@ The name of the app comes from the tipical expression from classic comic books, 
 - [GitHub](https://github.com/) - for version control and product backlog.
 - [Notion](https://notion.so/) - for notes taking and tasks manager.
 - [GitPod](https://gitpod.io/) - as development environment.
+- [Heroku](https://heroku.com/) - as cloud based platform to deploy the web app on.
+- [PostgreSQL](https://postgresql.org/) - as database.

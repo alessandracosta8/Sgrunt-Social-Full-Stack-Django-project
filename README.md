@@ -9,6 +9,8 @@ The name of the app comes from the tipical expression from classic comic books, 
 ## Table of Contents
 ---
 - [Agile Methodology](#agile-methodology)
+    - [User Stories](#user-stories)
+- [Technologies](#technologies)
 
 &nbsp;
 
@@ -17,10 +19,12 @@ The name of the app comes from the tipical expression from classic comic books, 
 
 ### User Stories
 
-1. As a **User** I can **post some text** so that I can **share my thoughts or ideas**.
+- As a **User** I can **post some text** so that I can **share my thoughts or ideas**.
 
-    Tasks:
-    - Initiate project installing the approriate technologies.
+- As a **User** I can **like or upvote a post** so that I can **express my preference for the post**.
 
-    Story Points:
-    - 1
+## Technologies
+---
+- [GitHub](https://github.com/) - for version control and product backlog.
+- [Notion](https://notion.so/) - for notes taking and tasks manager.
+- [GitPod](https://gitpod.io/) - as development environment.

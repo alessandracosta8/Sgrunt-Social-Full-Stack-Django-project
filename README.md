@@ -11,6 +11,7 @@ The name of the app comes from the tipical expression from classic comic books, 
 - [Agile Methodology](#agile-methodology)
     - [User Stories](#user-stories)
 - [Technologies](#technologies)
+- [Credits](#credits)
 
 &nbsp;
 
@@ -32,3 +33,10 @@ The name of the app comes from the tipical expression from classic comic books, 
 - [PostgreSQL](https://postgresql.org/) - as database.
 - [DJ database url](https://pypi.org/project/dj-database-url/) - database setup.
 - [Psycopg](https://pypi.org/project/psycopg2/) - PostgreSQL database adapter for Python.
+- [Django AllAuth](https://django-allauth.readthedocs.io/en/latest/installation.html) - for authentication of users.
+- [Django Crisy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) - for forms styling.
+
+
+## Credits
+---
+- [Django AllAuth Templates](https://github.com/pennersr/django-allauth)

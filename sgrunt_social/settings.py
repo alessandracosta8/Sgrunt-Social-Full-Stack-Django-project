@@ -32,6 +32,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# CSRF Trusted origin for the localhost in GitPod
+CSRF_TRUSTED_ORIGINS = ['https://8000-alessandrac-sgruntsocia-3jb9le557o1.ws-eu62.gitpod.io',]
+
 
 # Application definition
 

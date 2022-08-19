@@ -149,7 +149,7 @@ STATIC_URL = 'static/'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Login page will redirect to index page
-LOGIN_REDIRECT_URL = 'index'
+LOGIN_REDIRECT_URL = 'post-list'
 
 # Set Email as required field in form
 ACCOUNT_EMAIL_REQUIRED = True

@@ -3,10 +3,11 @@ Imports:
 """
 from django.shortcuts import render
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from django.views import View
+from django.views.generic.edit import UpdateView, DeleteView
 from .models import Post, Comment
 from .forms import PostForm, CommentForm
-from django.views.generic.edit import UpdateView, DeleteView
 
 
 class PostListView(View):
@@ -46,7 +47,6 @@ class PostDetailView(View):
     def get(self, request, pk, *args, **kwargs):
         post = Post.objects.get(pk=pk)
         form = CommentForm()
-
         comments = Comment.objects.filter(post=post).order_by('-created_on')
 
         context = {
@@ -73,6 +73,7 @@ class PostDetailView(View):
             'form': form,
             'comments': comments,
         }
+
         return render(request, 'core/post_detail.html', context)
 
 
@@ -101,6 +102,6 @@ class CommentDeleteView(DeleteView):
     template_name = 'core/comment_delete.html'
 
     def get_success_url(self):
-        """ redirect to post detail page when delete is successful """
-        pk = self.kwargs['pk']
+        """ redirect to post detail page when comment delete is successful """
+        pk = self.kwargs['post_pk']
         return reverse_lazy('post-detail', kwargs={'pk': pk})

@@ -28,9 +28,13 @@ The name of the app comes from the tipical expression from classic comic books, 
 #### Epic: Post and comment
 - As a **User** I can **post some text** so that I can **share my thoughts or ideas**.
 
+- As a **User** I can **comment on somebody's post** so that I can **share my thoughts or ideas on that topic**.
+
 - As a **User** I can **click on a Post** so that **I can read the post's page and view all of its comments**.
 
 - As a **User** I can **edit or delete a post** so that **I can change what I've shared or delete it**.
+
+- As a **User** I can **delete a comment** so that **I can change what I've shared or delete it**.
 
 - As a **User** I can **view only the posts of the users I follow** so that **I can focus only on the content I care about**.
 

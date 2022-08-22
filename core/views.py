@@ -10,7 +10,7 @@ from .models import Post, Comment
 from .forms import PostForm, CommentForm
 
 
-class PostListView(View):
+class PostListView(LoginRequiredMixin, View):
     """
     Post feed view
     """
@@ -42,7 +42,7 @@ class PostListView(View):
         return render(request, 'core/post_list.html', context)
 
 
-class PostDetailView(View):
+class PostDetailView(LoginRequiredMixin, View):
     """ Post specific page view, with ability to comment and display all comments """
     def get(self, request, pk, *args, **kwargs):
         post = Post.objects.get(pk=pk)
@@ -77,7 +77,7 @@ class PostDetailView(View):
         return render(request, 'core/post_detail.html', context)
 
 
-class PostEditView(UpdateView):
+class PostEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     """ Ability to edit a post """
     model = Post
     fields = ['body']
@@ -88,15 +88,25 @@ class PostEditView(UpdateView):
         pk = self.kwargs['pk']
         return reverse_lazy('post-detail', kwargs={'pk': pk})
 
+    def test_func(self):
+        """ If user matches post's author -> can edit, or else -> 403 """
+        post = self.get_object()
+        return self.request.user == post.author
 
-class PostDeleteView(DeleteView):
+
+class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """ Ability to delete post """
     model = Post
     template_name = 'core/post_delete.html'
     success_url = reverse_lazy('post-list')
 
+    def test_func(self):
+        """ If user matches post's author -> can delete, or else -> 403 """
+        post = self.get_object()
+        return self.request.user == post.author
 
-class CommentDeleteView(DeleteView):
+
+class CommentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """ Ability to delete comment """
     model = Comment
     template_name = 'core/comment_delete.html'
@@ -105,3 +115,8 @@ class CommentDeleteView(DeleteView):
         """ redirect to post detail page when comment delete is successful """
         pk = self.kwargs['post_pk']
         return reverse_lazy('post-detail', kwargs={'pk': pk})
+    
+    def test_func(self):
+        """ If user matches comment's author -> can delete, or else -> 403 """
+        comment = self.get_object()
+        return self.request.user == comment.author

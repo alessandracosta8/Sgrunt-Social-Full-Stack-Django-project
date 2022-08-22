@@ -20,10 +20,15 @@ The name of the app comes from the tipical expression from classic comic books, 
 
 ### User Stories
 
-#### Epic: Login and Follow
+#### Epic: Login, Users and Follow
 - As a **User** I can **login** so that **I can interact with the content or create content**.
 
 - As a **User** I can **follow or unfollow other users** so that **I can be updated on what the people I want to follow are posting, or stop it**.
+
+- As a **User** I can **have my own profile** so that **I can share my info and display all of my posts**.
+
+- As a **User** I can **edit my profile** so that **I can edit my informations**.
+
 
 #### Epic: Post and comment
 - As a **User** I can **post some text** so that I can **share my thoughts or ideas**.
@@ -37,7 +42,6 @@ The name of the app comes from the tipical expression from classic comic books, 
 - As a **User** I can **delete a comment** so that **I can change what I've shared or delete it**.
 
 - As a **User** I can **view only the posts of the users I follow** so that **I can focus only on the content I care about**.
-
 
 
 - As a **User** I can **like or upvote a post** so that I can **express my preference for the post**.

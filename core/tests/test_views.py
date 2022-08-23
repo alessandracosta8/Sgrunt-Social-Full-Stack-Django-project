@@ -1,9 +1,8 @@
 """ Imports: """
 from django.test import TestCase, Client
 from django.urls import reverse
-from django.utils import timezone
 from django.contrib.auth.models import User
-from core.models import Post, Comment, UserProfile
+from core.models import Post
 
 
 class TestViews(TestCase):

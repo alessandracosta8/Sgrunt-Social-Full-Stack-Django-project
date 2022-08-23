@@ -34,7 +34,7 @@ class PostListView(LoginRequiredMixin, View):
             new_post = form.save(commit=False)
             new_post.author = request.user
             new_post.save()
-        
+
         context = {
             'post_list': posts,
             'form': form,
@@ -43,8 +43,9 @@ class PostListView(LoginRequiredMixin, View):
 
 
 class PostDetailView(LoginRequiredMixin, View):
-    """ Post specific page view, with ability to comment and display all comments """
+    """ specific post page with its comments """
     def get(self, request, pk, *args, **kwargs):
+        """ retrieves post and relative comments """
         post = Post.objects.get(pk=pk)
         form = CommentForm()
         comments = Comment.objects.filter(post=post).order_by('-created_on')
@@ -55,8 +56,9 @@ class PostDetailView(LoginRequiredMixin, View):
             'comments': comments,
         }
         return render(request, 'core/post_detail.html', context)
-    
+
     def post(self, request, pk, *args, **kwargs):
+        """ comment added to its post """
         post = Post.objects.get(pk=pk)
         form = CommentForm(request.POST)
 
@@ -65,7 +67,7 @@ class PostDetailView(LoginRequiredMixin, View):
             new_comment.author = request.user
             new_comment.post = post
             new_comment.save()
-        
+
         comments = Comment.objects.filter(post=post).order_by('-created_on')
 
         context = {
@@ -115,7 +117,7 @@ class CommentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         """ redirect to post detail page when comment delete is successful """
         pk = self.kwargs['post_pk']
         return reverse_lazy('post-detail', kwargs={'pk': pk})
-    
+
     def test_func(self):
         """ If user matches comment's author -> can delete, or else -> 403 """
         comment = self.get_object()
@@ -129,6 +131,7 @@ class ProfileView(View):
     - filters posts to display only the one from this user
     """
     def get(self, request, pk, *args, **kwargs):
+        """ display profile """
         profile = UserProfile.objects.get(pk=pk)
         user = profile.user
         posts = Post.objects.filter(author=user).order_by('-created_on')

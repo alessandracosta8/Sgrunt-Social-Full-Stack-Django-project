@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+import sys
 
 if os.path.isfile('env.py'):
     import env
@@ -33,7 +34,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 # CSRF Trusted origin for the localhost in GitPod
-CSRF_TRUSTED_ORIGINS = ['https://8000-alessandrac-sgruntsocia-3jb9le557o1.ws-eu62.gitpod.io',]
+CSRF_TRUSTED_ORIGINS = ['https://8000-alessandrac-sgruntsocia-3jb9le557o1.ws-eu62.gitpod.io', ]
 
 
 # Application definition
@@ -106,9 +107,17 @@ WSGI_APPLICATION = 'sgrunt_social.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-}
+if 'test' in sys.argv or 'test_coverage' in sys.argv:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+else:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators

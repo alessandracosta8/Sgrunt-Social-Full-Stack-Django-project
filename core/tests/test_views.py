@@ -16,6 +16,7 @@ class TestViews(TestCase):
             'lennon@thebeatles.com',
             'johnpassword'
             )
+        # tests if user login works before running other tests
         self.client.login(username='john', password='johnpassword')
         self.post = Post.objects.create(
             body='text',

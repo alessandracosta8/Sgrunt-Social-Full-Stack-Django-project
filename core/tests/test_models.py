@@ -65,3 +65,7 @@ class TestModels(TestCase):
     def user_profile_has_picture(self):
         """ Test if profile has default picture even if not setup """
         self.assertEqual(self.user_profile.picture.count(), 1)
+
+    def user_profile_has_followers_field(self):
+        """ Test if user profile has followers field """
+        self.assertEqual(self.user_profile.followers.count(), 0)

@@ -32,6 +32,7 @@ class UserProfile(models.Model):
     """
     User Profile model
     - One to one field -> A user can have only one profile and viceversa
+    - Field to store followers
     """
     user = models.OneToOneField(
         User,
@@ -48,6 +49,11 @@ class UserProfile(models.Model):
         upload_to='uploads/profile_pictures',
         default='uploads/profile_pictures/default.png',
         blank=True
+        )
+    followers = models.ManyToManyField(
+        User,
+        blank=True,
+        related_name='followers'
         )
 
 

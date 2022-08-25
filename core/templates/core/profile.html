@@ -48,6 +48,28 @@
             {% if profile.bio %}
             <p>{{ profile.bio }}</p>
             {% endif %}
+        
+            <!-- Followers diplay and controls -->
+            <div class="mb-3">
+                <p>Followers: {{ number_of_followers }}</p>
+                <!-- a user cannot remove or add itself from its list of followers -->
+                {% if user == request.user %}
+                    <!-- do nothing -->
+                    <!-- if it's not -->
+                    {% else %}
+                        {% if is_following %}
+                        <form method="POST" action="{% url 'remove-follower' profile.pk %}">
+                            {% csrf_token %}
+                            <button class="btn btn-outline-danger" type="submit">Unfollow</button>
+                        </form>
+                        {% else %}
+                        <form method="POST" action="{% url 'add-follower' profile.pk %}">
+                            {% csrf_token %}
+                            <button class="btn btn-outline-success" type="submit">Follow</button>
+                        </form>
+                        {% endif %}
+                    {% endif %}
+            </div>
         </div>
     </div>
 

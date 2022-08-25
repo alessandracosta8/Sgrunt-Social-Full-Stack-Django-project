@@ -129,6 +129,8 @@ class ProfileView(View):
     Profile view - display info and all their posts
     - gets the primary key (pk) and check if it matches
     - filters posts to display only the one from this user
+    - count how many followers this profile has
+    - check if the current user is a follower with for loop
     """
     def get(self, request, pk, *args, **kwargs):
         """ display profile """
@@ -136,10 +138,28 @@ class ProfileView(View):
         user = profile.user
         posts = Post.objects.filter(author=user).order_by('-created_on')
 
+        # followers handling:
+        followers = profile.followers.all()
+
+        if len(followers) == 0:
+            is_following = False
+
+        for follower in followers:
+            if follower == request.user:
+                is_following = True
+                break
+            else:
+                is_following = False
+
+        number_of_followers = len(followers)
+
+
         context = {
             'user': user,
             'profile': profile,
-            'posts': posts
+            'posts': posts,
+            'number_of_followers': number_of_followers,
+            'is_following': is_following,
         }
 
         return render(request, 'core/profile.html', context)

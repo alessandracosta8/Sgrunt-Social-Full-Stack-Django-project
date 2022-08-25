@@ -182,7 +182,6 @@ class ProfileEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 class AddFollower(LoginRequiredMixin, View):
     """ Adds a follower to the user profile """
-
     def post(self, request, pk, *args, **kwargs):
         """ the current user gets added to the list of followers  """
         profile = UserProfile.objects.get(pk=pk)
@@ -192,9 +191,25 @@ class AddFollower(LoginRequiredMixin, View):
 
 class RemoveFollower(LoginRequiredMixin, View):
     """ Remove follower from the user profile """
-
     def post(self, request, pk, *args, **kwargs):
         """ the current user gets removed to the list of followers  """
         profile = UserProfile.objects.get(pk=pk)
         profile.followers.remove(request.user)
         return redirect('profile', pk=profile.pk)
+
+
+class AddLike(LoginRequiredMixin, View):
+    """ Adds like to the post selected """
+    def post(self, request, pk, *args, **kwargs):
+        """  checks if post is already liked and adds it if not """
+        post = Post.objects.get(pk=pk)
+        is_like = False
+
+        for like in post.likes.all():
+            if like == request.user:
+                is_like = True
+                break
+        if not is_like:
+            post.likes.add(request.user)
+        if is_like:
+            post.likes.remove(request.user)

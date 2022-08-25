@@ -29,6 +29,8 @@ The name of the app comes from the tipical expression from classic comic books, 
 
 - As a **User** I can **edit my profile** so that **I can edit my informations**.
 
+- As a **User** I can **click on any post or comment author** so that **I can view the full profile of that user**.
+
 
 #### Epic: Post and comment
 - As a **User** I can **post some text** so that I can **share my thoughts or ideas**.

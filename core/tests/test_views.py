@@ -30,6 +30,8 @@ class TestViews(TestCase):
         self.profile_edit_url = reverse('profile-edit', args=['1'])
         self.post_delete_url = reverse('post-delete', args=['1'])
         self.comment_delete_url = reverse('comment-delete', args=['1', '1'])
+        self.add_follower_url = reverse('add-follower', args=['1'])
+        self.remove_follower_url = reverse('remove-follower', args=['1'])
 
     # PostListView tests:
     def test_post_list_view_get(self):
@@ -129,3 +131,15 @@ class TestViews(TestCase):
         response = self.client.get(self.profile_edit_url)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'core/profile_edit.html')
+
+    # AddFollower view tests:
+    def test_add_follower_view_post(self):
+        """ tests that response for POST is positive """
+        response = self.client.post(self.add_follower_url)
+        self.assertEqual(response.status_code, 302)
+
+    # RemoveFollower view tests:
+    def test_remove_follower_view_post(self):
+        """ tests that response for POST is positive """
+        response = self.client.post(self.remove_follower_url)
+        self.assertEqual(response.status_code, 302)

@@ -21,8 +21,9 @@ class TestViews(TestCase):
         self.post = Post.objects.create(
             body='text',
             created_on=timezone.now(),
-            author=self.user,
+            author=self.user
         )
+        # initiate urls
         self.list_url = reverse('post-list')
         self.detail_url = reverse('post-detail', args=['1'])
         self.edit_url = reverse('post-edit', args=['1'])
@@ -32,6 +33,8 @@ class TestViews(TestCase):
         self.comment_delete_url = reverse('comment-delete', args=['1', '1'])
         self.add_follower_url = reverse('add-follower', args=['1'])
         self.remove_follower_url = reverse('remove-follower', args=['1'])
+        self.add_like_url = reverse('like', args=['1'])
+        self.add_dislike_url = reverse('dislike', args=['1'])
 
     # PostListView tests:
     def test_post_list_view_get(self):
@@ -142,4 +145,16 @@ class TestViews(TestCase):
     def test_remove_follower_view_post(self):
         """ tests that response for POST is positive """
         response = self.client.post(self.remove_follower_url)
+        self.assertEqual(response.status_code, 302)
+
+    # AddLike view tests:
+    def test_addlike_view_post(self):
+        """ tests that response for POST is positive """
+        response = self.client.post(self.add_like_url)
+        self.assertEqual(response.status_code, 302)
+
+    # AddDislike view tests:
+    def test_adddislike_view_post(self):
+        """ tests that response for POST is positive """
+        response = self.client.post(self.add_dislike_url)
         self.assertEqual(response.status_code, 302)

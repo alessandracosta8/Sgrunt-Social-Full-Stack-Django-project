@@ -47,6 +47,7 @@ class TestModels(TestCase):
     def post_has_body(self):
         """ Test if post is not empty """
         self.assertNotEqual(self.post.body, '')
+        self.assertEqual(self.post.body, 'text')
 
     # Comment model tests
     def comment_user_is_correct(self):
@@ -60,6 +61,7 @@ class TestModels(TestCase):
     def comment_has_body(self):
         """ Test if comment is not empty """
         self.assertNotEqual(self.comment.body, '')
+        self.assertEqual(self.comment.body, 'some random comment')
 
     # UserProfile model tests:
     def user_profile_has_picture(self):

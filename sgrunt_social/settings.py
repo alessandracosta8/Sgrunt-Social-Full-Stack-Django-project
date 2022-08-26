@@ -12,8 +12,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
-import dj_database_url
 import sys
+import dj_database_url
 
 if os.path.isfile('env.py'):
     import env
@@ -34,7 +34,9 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 # CSRF Trusted origin for the localhost in GitPod
-CSRF_TRUSTED_ORIGINS = ['https://8000-alessandrac-sgruntsocia-3jb9le557o1.ws-eu62.gitpod.io', ]
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-alessandrac-sgruntsocia-3jb9le557o1.ws-eu63.gitpod.io',
+    ]
 
 
 # Application definition

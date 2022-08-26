@@ -71,7 +71,9 @@ The name of the app comes from the tipical expression from classic comic books, 
 ---
 - [Django AllAuth Templates](https://github.com/pennersr/django-allauth)
 - [Django Documentation](https://docs.djangoproject.com/en/4.1/)
-- [Unsplash free stock photos](https://unsplash.com/)
+- [Mozilla Django Testing Tutorials](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Testing)
 - [Django testing tutorials](https://www.youtube.com/watch?v=qwypH3YvMKc&list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM)
 - [PyLint tutorial](https://www.youtube.com/watch?v=w6bRHNC7Kuc&t=30s)
 - [Django social media app tutorial](https://www.youtube.com/playlist?list=PLPSM8rIid1a3TkwEmHyDALNuHhqiUiU5A)
+- [Unsplash free stock photos](https://unsplash.com/)
+- [FontAwsome Icons](https://fontawesome.com/)

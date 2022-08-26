@@ -10,7 +10,9 @@ from core.views import (
     ProfileView,
     ProfileEditView,
     AddFollower,
-    RemoveFollower
+    RemoveFollower,
+    AddLike,
+    AddDislike
 )
 
 
@@ -61,3 +63,13 @@ class TestUrls(SimpleTestCase):
         """ check if url calls the right view """
         url = reverse('remove-follower', args=['1'])
         self.assertEqual(resolve(url).func.view_class, RemoveFollower)
+
+    def test_add_like_url_is_resolved(self):
+        """ check if url calls the right view """
+        url = reverse('like', args=['1'])
+        self.assertEqual(resolve(url).func.view_class, AddLike)
+
+    def test_add_dislike_url_is_resolved(self):
+        """ check if url calls the right view """
+        url = reverse('dislike', args=['1'])
+        self.assertEqual(resolve(url).func.view_class, AddDislike)

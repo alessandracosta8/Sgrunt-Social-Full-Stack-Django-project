@@ -227,6 +227,7 @@ class AddLike(LoginRequiredMixin, View):
         if is_like:
             post.likes.remove(request.user)
 
+        # return to the previous template
         next_value = request.POST.get('next', '/')
         return HttpResponseRedirect(next_value)
 
@@ -260,5 +261,6 @@ class AddDislike(LoginRequiredMixin, View):
         if is_dislike:
             post.dislikes.remove(request.user)
 
+        # return to the previous template
         next_value = request.POST.get('next', '/')
         return HttpResponseRedirect(next_value)

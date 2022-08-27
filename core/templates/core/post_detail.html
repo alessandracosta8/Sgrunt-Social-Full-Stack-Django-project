@@ -12,19 +12,31 @@
     </div>
 
     <!-- Displays the post selected -->
-    <div class="row justify-content-center mt-3">
-        <div class="col-md-5 col-sm-12 border-bottom">
-            <p>
-                <strong>{{ post.author }}</strong> {{ post.created_on }}
-                {% if request.user == post.author %}
-                    <a href="{% url 'post-edit' post.pk %}" style="color: #333;">
-                        <i class="far fa-edit"></i>
-                    </a>
-                    <a href="{% url 'post-delete' post.pk %}" style="color: #333;">
-                        <i class="fas fa-trash"></i>
-                    </a>
-                {% endif %}
-            </p>
+    <div class="row justify-content-center mt-2">
+        <div class="col-md-5 col-sm-12 card border-light mb-3">
+
+            <!-- Post Author and timestamp -->
+            <div class="mt-3 mb-3 card-header">
+                <h5 class="card-title">
+                    <h5 class="card-title"><a style="text-decoration: none" class="text-primary"
+                            href="{% url 'profile' post.author.profile.pk %}">@{{ post.author }}</a></h5>
+                    <h6 class="card-subtitle mt-1"><small>{{ post.created_on }}</small></h6>
+                    <!-- Edit buttons display only if user is the author -->
+                    <div class="mt-2 mb-2">
+                        {% if request.user == post.author %}
+                        <a href="{% url 'post-edit' post.pk %}" class="text-muted">
+                            <i class="far fa-edit"></i>
+                            Edit post
+                        </a>
+                        <a href="{% url 'post-delete' post.pk %}" class="text-muted">
+                            <i class="fas fa-trash"></i>
+                            Delete post
+                        </a>
+                        {% endif %}
+                    </div>
+                </h5>
+            </div>
+
             <p>{{ post.body }}</p>
 
             <!-- Likes / Dislikes counter -->
@@ -71,9 +83,9 @@
             <p>
                 <strong>{{ comment.author }}</strong> {{ comment.created_on }}
                 {% if request.user == comment.author %}
-                    <a href="{% url 'comment-delete' post.pk comment.pk %}" style="color: #333;">
-                        <i class="fas fa-trash"></i>
-                    </a>
+                <a href="{% url 'comment-delete' post.pk comment.pk %}" style="color: #333;">
+                    <i class="fas fa-trash"></i>
+                </a>
                 {% endif %}
             </p>
             <p>

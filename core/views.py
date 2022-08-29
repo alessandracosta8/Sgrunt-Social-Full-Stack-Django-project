@@ -6,9 +6,9 @@ from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from django.views import View
+from django.views.generic.edit import UpdateView, DeleteView
 from .models import Post, Comment, UserProfile
 from .forms import PostForm, CommentForm
-from django.views.generic.edit import UpdateView, DeleteView
 
 
 class PostListView(LoginRequiredMixin, View):

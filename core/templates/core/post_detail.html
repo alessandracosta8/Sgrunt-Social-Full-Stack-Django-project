@@ -20,8 +20,14 @@
 
                 <div class="p-2">
                     <h5 class="card-title">
-                        <h5 class="card-title"><a style="text-decoration: none" class="text-primary"
-                                href="{% url 'profile' post.author.profile.pk %}">@{{ post.author }}</a></h5>
+                        <h5 class="card-title">
+                            <a style="text-decoration: none" class="text-primary"
+                                href="{% url 'profile' post.author.profile.pk %}">
+                                <img src="{{ post.author.profile.picture.url }}" class="rounded-circle" width="50"
+                                    height="50" style="padding: 0.3rem;" />
+                                @{{ post.author }}
+                            </a>
+                        </h5>
                         <h6 class="card-subtitle mt-1"><small>{{ post.created_on }}</small></h6>
                     </h5>
                 </div>
@@ -29,10 +35,10 @@
                 <!-- Edit buttons display only if user is the author -->
                 <div class="mt-2 mb-2 ml-auto p-2">
                     {% if request.user == post.author %}
-                    <a href="{% url 'post-edit' post.pk %}" class="text-muted">
+                    <a href="{% url 'post-edit' post.pk %}" class="text-muted" aria-label="Edit post button">
                         <i class="far fa-edit"></i>
                     </a>
-                    <a href="{% url 'post-delete' post.pk %}" class="text-muted">
+                    <a href="{% url 'post-delete' post.pk %}" class="text-muted" aria-label="Delete post button">
                         <i class="fas fa-trash"></i>
                     </a>
                     {% endif %}
@@ -85,17 +91,25 @@
     {% for comment in comments %}
     <div class="row justify-content-center mt-3 mb-5">
         <div class="col-md-5 col-sm-12 border-bottom">
-            <p>
-                <strong>{{ comment.author }}</strong> {{ comment.created_on }}
-                {% if request.user == comment.author %}
-                <a href="{% url 'comment-delete' post.pk comment.pk %}" style="color: #333;">
-                    <i class="fas fa-trash"></i>
-                </a>
-                {% endif %}
-            </p>
-            <p>
-                {{ comment.comment }}
-            </p>
+            <div class="card border-secondary">
+                <div class="card-header">
+                    <p>
+                        <strong><img src="{{ comment.author.profile.picture.url }}" class="rounded-circle" width="50"
+                                height="50" style="padding: 0.3rem;" />{{ comment.author }}</strong>
+                        {% if request.user == comment.author %}
+                        <a href="{% url 'comment-delete' post.pk comment.pk %}" style="color: #333;">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                        {% endif %}
+                    </p>
+                    <p>{{ comment.created_on }}</p>
+                </div>
+                <div class="card-body">
+                    <p>
+                        {{ comment.comment }}
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
     {% endfor %}

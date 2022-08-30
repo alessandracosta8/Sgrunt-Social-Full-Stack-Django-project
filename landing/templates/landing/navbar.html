@@ -6,12 +6,8 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <!-- if statement to redirect logged in user to post feed directly -->
-            <a class="navbar-brand"
-            {% if user.is_authenticated %}
-            href="{% url 'post-list' %}"
-            {% else %}
-            href="{% url 'index' %}"
-            {% endif %}>
+            <a class="navbar-brand" {% if user.is_authenticated %} href="{% url 'post-list' %}" {% else %}
+                href="{% url 'index' %}" {% endif %}>
                 <i class="fas fa-comment"></i>
                 Sgrunt Social
             </a>
@@ -23,7 +19,9 @@
                     <div class="input-group">
                         <span class="input-group-text" id="basic-addon1">@</span>
                         <input type="text" class="form-control" placeholder="Username" aria-label="Username"
-                            aria-describedby="basic-addon1">
+                            aria-describedby="basic-addon1" name="query" value="{{ request.GET.query }}">
+                        <button style="border: none; background-color: transparent; box-shadow: none" type="submit"><i
+                                class="fas fa-search"></i></button>
                     </div>
                 </form>
                 <!-- User dropdown menu displayed id user is authenticated -->

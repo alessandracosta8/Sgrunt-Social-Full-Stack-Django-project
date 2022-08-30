@@ -31,6 +31,9 @@ The name of the app comes from the tipical expression from classic comic books, 
 
 - As a **User** I can **click on any post or comment author** so that **I can view the full profile of that user**.
 
+- As a **User** I can **search in the navbar for other users** so that **I can easily find people I want to connect with**.
+
+
 
 #### Epic: Post and comment
 - As a **User** I can **post some text** so that I can **share my thoughts or ideas**.

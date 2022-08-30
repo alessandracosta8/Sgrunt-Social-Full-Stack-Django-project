@@ -13,7 +13,8 @@ from .views import (
     AddFollower,
     RemoveFollower,
     AddLike,
-    AddDislike
+    AddDislike,
+    UserSearch
 )
 
 urlpatterns = [
@@ -71,5 +72,10 @@ urlpatterns = [
         'profile/<int:pk>/followers/remove',
         RemoveFollower.as_view(),
         name='remove-follower'
+    ),
+    path(
+        'search/',
+        UserSearch.as_view(),
+        name='search'
     ),
 ]

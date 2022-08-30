@@ -12,7 +12,8 @@ from core.views import (
     AddFollower,
     RemoveFollower,
     AddLike,
-    AddDislike
+    AddDislike,
+    UserSearch
 )
 
 
@@ -73,3 +74,8 @@ class TestUrls(SimpleTestCase):
         """ check if url calls the right view """
         url = reverse('dislike', args=['1'])
         self.assertEqual(resolve(url).func.view_class, AddDislike)
+
+    def test_user_search_url_is_resolved(self):
+        """ check if url calls the right view """
+        url = reverse('search', args=['1'])
+        self.assertEqual(resolve(url).func.view_class, UserSearch)

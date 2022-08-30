@@ -111,7 +111,7 @@
                             {% csrf_token %}
                             <input type="hidden" name="next" value="{{ request.path }}">
                             <button style="background-color: transparent; border: none; box-shadow: none;"
-                                type="submit">
+                            class="text-muted" type="submit">
                                 <i class="far fa-thumbs-up"> <span>{{ post.likes.all.count }}</span></i>
                             </button>
                         </form>
@@ -119,7 +119,7 @@
                             {% csrf_token %}
                             <input type="hidden" name="next" value="{{ request.path }}">
                             <button style="background-color: transparent; border: none; box-shadow: none;"
-                                type="submit">
+                            class="text-muted" type="submit">
                                 <i class="far fa-thumbs-down"> <span>{{ post.dislikes.all.count }}</span></i>
                             </button>
                         </form>

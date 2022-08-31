@@ -76,6 +76,6 @@ urlpatterns = [
     path(
         'search/',
         UserSearch.as_view(),
-        name='search'
+        name='profile-search'
     ),
 ]

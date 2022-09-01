@@ -35,7 +35,6 @@ class TestViews(TestCase):
         self.remove_follower_url = reverse('remove-follower', args=['1'])
         self.add_like_url = reverse('like', args=['1'])
         self.add_dislike_url = reverse('dislike', args=['1'])
-        self.user_search_url = reverse('search', args=['1'])
 
     # PostListView tests:
     def test_post_list_view_get(self):
@@ -159,10 +158,3 @@ class TestViews(TestCase):
         """ tests that response for POST is positive """
         response = self.client.post(self.add_dislike_url)
         self.assertEqual(response.status_code, 302)
-
-    # UserSearch view tests:
-    def test_user_search_view_get(self):
-        """ tests that response for GET is positive """
-        response = self.client.get(self.user_search_url)
-        self.assertEqual(response.status_code, 302)
-        self.assertTemplateUsed(response, 'core/search.html')

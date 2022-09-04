@@ -15,8 +15,7 @@
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 </ul>
-                <form class="d-flex" method="POST" action="{% url 'profile-search' %}">
-                    {% csrf_token %}
+                <form class="d-flex" method="GET" action="{% url 'profile-search' %}">
                     <div class="input-group">
                         <span class="input-group-text" id="basic-addon1">@</span>
                         <input type="text" class="form-control" placeholder="Username" aria-label="Username"

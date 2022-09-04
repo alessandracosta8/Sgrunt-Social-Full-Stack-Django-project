@@ -80,3 +80,4 @@ The name of the app comes from the tipical expression from classic comic books, 
 - [Django social media app tutorial](https://www.youtube.com/playlist?list=PLPSM8rIid1a3TkwEmHyDALNuHhqiUiU5A)
 - [Unsplash free stock photos](https://unsplash.com/)
 - [FontAwsome Icons](https://fontawesome.com/)
+- [Django quering (Q)](https://docs.djangoproject.com/en/3.1/topics/db/queries/)

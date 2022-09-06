@@ -1,0 +1,17 @@
+.remove-default-btn {
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.no-txt-deco {
+    text-decoration: none;
+}
+
+.profile-img-padding {
+    padding: 0.3rem;
+}
+
+.color-333 {
+    color: #333;
+}

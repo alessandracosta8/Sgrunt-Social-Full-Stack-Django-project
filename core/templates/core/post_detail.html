@@ -48,7 +48,7 @@
             <!-- Post Image -->
             {% if post.image %}
                 <a href="{% url 'post-detail' post.pk %}">
-                    <img class="card-img-top" src="{{ post.image.url }}" alt="Post image" class="post-image">
+                    <img class="card-img-top post-image" src="{{ post.image.url }}" alt="Post image" class="post-image">
                 </a>
             {% endif %}
             

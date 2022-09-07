@@ -24,7 +24,7 @@
     {% for follower in followers %}
     <div class="row justify-content-center">
         <div class="col-md-5 col-sm-12 position-relative my-3">
-            <a href="{% url 'profile' follower.profile.pk %}" class="text-primary no-txt-deco">
+            <a href="{% url 'profile' follower.profile.pk %}" class="no-txt-deco">
                 <img class="rounded-circle profile-img-padding" height="50" width="50" src="{{ follower.profile.picture.url }}" />
                 @{{ follower.username }}
             </a>

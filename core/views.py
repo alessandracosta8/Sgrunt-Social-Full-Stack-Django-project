@@ -35,8 +35,11 @@ class PostListView(LoginRequiredMixin, View):
 
     def post(self, request, *args, **kwargs):
         """ Handles post request and saves the new post """
-        posts = Post.objects.all().order_by('-created_on')
-        form = PostForm(request.POST)
+        logged_in_user = request.user
+        posts = Post.objects.filter(
+            author__profile__followers__in=[logged_in_user.id]
+        ).order_by('-created_on')
+        form = PostForm(request.POST, request.FILES)
 
         if form.is_valid():
             new_post = form.save(commit=False)

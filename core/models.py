@@ -14,12 +14,15 @@ class Post(models.Model):
     - body is text
     - created_on will be setup on time and date when submit button is hit
     - author setup with cascade so if User is deleted, so are their posts
+    - likes and dislikes collected
+    - post images linked
     """
     body = models.TextField()
     created_on = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     likes = models.ManyToManyField(User, blank=True, related_name='likes')
     dislikes = models.ManyToManyField(User, blank=True, related_name='dislikes')
+    image = models.ImageField(upload_to='uploads/post_photos', blank=True, null=True)
 
 
 class Comment(models.Model):

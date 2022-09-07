@@ -7,9 +7,9 @@ from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from django.views import View
+from django.views.generic.edit import UpdateView, DeleteView
 from .models import Post, Comment, UserProfile
 from .forms import PostForm, CommentForm
-from django.views.generic.edit import UpdateView, DeleteView
 
 
 class PostListView(LoginRequiredMixin, View):
@@ -17,8 +17,14 @@ class PostListView(LoginRequiredMixin, View):
     Post feed view
     """
     def get(self, request, *args, **kwargs):
-        """ Iterate through posts and display them from newest to last """
-        posts = Post.objects.all().order_by('-created_on')
+        """
+        Iterate through posts and display them from newest to last
+        Filters only the posts from the users that are followed by the user
+        """
+        logged_in_user = request.user
+        posts = Post.objects.filter(
+            author__profile__followers__in=[logged_in_user.id]
+        ).order_by('-created_on')
         form = PostForm()
 
         context = {

@@ -31,12 +31,12 @@
             <!-- Post Author and timestamp -->
             <div class="mt-3 mb-3 card-header">
                 <h5 class="card-title">
-                    <a class="text-primary no-txt-deco"
-                        href="{% url 'profile' post.author.profile.pk %}">
-                        <img src="{{ post.author.profile.picture.url }}" class="rounded-circle profile-img-padding" width="50" height="50" />
+                    <a class="text-primary no-txt-deco" href="{% url 'profile' post.author.profile.pk %}">
+                        <img src="{{ post.author.profile.picture.url }}" class="rounded-circle profile-img-padding"
+                            width="50" height="50" />
                         @{{ post.author }}
                     </a>
-                    </h5>
+                </h5>
                 <h6 class="card-subtitle mt-1"><small>{{ post.created_on }}</small></h6>
             </div>
 

@@ -21,10 +21,9 @@
                 <div class="p-2">
                     <h5 class="card-title">
                         <h5 class="card-title">
-                            <a class="text-primary no-txt-deco"
-                                href="{% url 'profile' post.author.profile.pk %}">
-                                <img src="{{ post.author.profile.picture.url }}" class="rounded-circle profile-img-padding" width="50"
-                                    height="50" />
+                            <a class="text-primary no-txt-deco" href="{% url 'profile' post.author.profile.pk %}">
+                                <img src="{{ post.author.profile.picture.url }}"
+                                    class="rounded-circle profile-img-padding" width="50" height="50" />
                                 @{{ post.author }}
                             </a>
                         </h5>
@@ -94,8 +93,12 @@
             <div class="card border-secondary">
                 <div class="card-header">
                     <p>
-                        <strong><img src="{{ comment.author.profile.picture.url }}" class="rounded-circle profile-img-padding" width="50"
-                                height="50" />{{ comment.author }}</strong>
+                        <a class="text-primary no-txt-deco" href="{% url 'profile' comment.author.profile.pk %}">
+                            <img src="{{ comment.author.profile.picture.url }}"
+                                class="rounded-circle profile-img-padding" width="50"
+                                height="50" />
+                                @{{ comment.author }}
+                        </a>
                         {% if request.user == comment.author %}
                         <a href="{% url 'comment-delete' post.pk comment.pk %}" class="color-333">
                             <i class="fas fa-trash"></i>

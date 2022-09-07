@@ -287,3 +287,18 @@ class UserSearch(View):
         }
 
         return render(request, 'core/search.html', context)
+
+
+class ListFollowers(View):
+    """ Displays the followers that the user profile has """
+    def get(self, request, pk, *args, **kwargs):
+        """ gets followers """
+        profile = UserProfile.objects.get(pk=pk)
+        followers = profile.followers.all()
+
+        context = {
+            'profile': profile,
+            'followers': followers,
+        }
+
+        return render(request, 'core/followers_list.html', context)

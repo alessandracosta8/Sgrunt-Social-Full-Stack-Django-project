@@ -51,7 +51,9 @@
 
             <!-- Followers diplay and controls -->
             <div class="mb-3">
-                <p>Followers: {{ number_of_followers }}</p>
+                <a href="{% url 'list-followers' profile.pk %}" class="text-primary no-txt-deco">
+                    Followers: {{ number_of_followers }}
+                </a>
                 <!-- a user cannot remove or add itself from its list of followers -->
                 {% if user == request.user %}
                 <!-- do nothing -->

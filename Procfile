@@ -1,1 +1,1 @@
-web: gunicorn sgrunt_social.wsgi:application --log-file -
+web: gunicorn sgrunt_social.wsgi:application

@@ -118,6 +118,7 @@ The diagram below details the database schema.
 
 ## Credits
 ---
+- Code Institute tutor support for all the support they provided.
 - [Django AllAuth Templates](https://github.com/pennersr/django-allauth)
 - [Django Documentation](https://docs.djangoproject.com/en/4.1/)
 - [Mozilla Django Testing Tutorials](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Testing)
@@ -128,4 +129,4 @@ The diagram below details the database schema.
 - [FontAwsome Icons](https://fontawesome.com/)
 - [Django quering (Q)](https://docs.djangoproject.com/en/3.1/topics/db/queries/)
 - [Heroku deployment](https://www.youtube.com/watch?v=XZoTukqekzY)
-- Code Institute tutor support for all the support they provided.
+- [Lucidchart](https://lucid.app/documents#/dashboard) - used to create the database schema design

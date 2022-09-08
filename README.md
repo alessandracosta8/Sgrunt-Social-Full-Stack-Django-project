@@ -130,3 +130,4 @@ The diagram below details the database schema.
 - [Django quering (Q)](https://docs.djangoproject.com/en/3.1/topics/db/queries/)
 - [Heroku deployment](https://www.youtube.com/watch?v=XZoTukqekzY)
 - [Lucidchart](https://lucid.app/documents#/dashboard) - used to create the database schema design
+- [Figma](https://www.figma.com/) - used to create wireframes

@@ -81,3 +81,5 @@ The name of the app comes from the tipical expression from classic comic books, 
 - [Unsplash free stock photos](https://unsplash.com/)
 - [FontAwsome Icons](https://fontawesome.com/)
 - [Django quering (Q)](https://docs.djangoproject.com/en/3.1/topics/db/queries/)
+- [Heroku deployment](https://www.youtube.com/watch?v=XZoTukqekzY)
+- Code Institute tutor support for all the support they provided.

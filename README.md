@@ -56,24 +56,36 @@ The website has a simple an minimalistic design, to leave all the user attention
 
 ### Wireframes
 
-Landing page
+<details>
+<summary>Landing page</summary>
+
 ![Landing Page](docs/wireframes/landing_page.png)
-&nbsp;
+</details>
 
-Post List
+<details>
+<summary>Post List</summary>
+
 ![Post List](docs/wireframes/post_list.png)
-&nbsp;
+</details>
 
-Profile
+<details>
+<summary>Profile</summary>
+
 ![Profile](docs/wireframes/profile_page.png)
-&nbsp;
+</details>
 
-Post Detail
+<details>
+<summary>Post Detail</summary>
+
 ![Post Detail](docs/wireframes/post_detail.png)
-&nbsp;
+</details>
 
-Followers List
+<details>
+<summary>Followers List</summary>
+
 ![Followers List](docs/wireframes/followers_list.png)
+</details>
+
 &nbsp;
 
 ## Data Model
@@ -91,6 +103,7 @@ The Comment model is a more simple model taking as the foreign keys the post it 
 The UserProfile model takes the User model as base structure and attaches the various details needed, including a profile picture that the user can upload and the list of followers the user currently has.
 
 The diagram below details the database schema.
+
 ![Database Schema](docs/readme_images/sgrunt-social-database-schema-diagram.jpeg)
 
 &nbsp;

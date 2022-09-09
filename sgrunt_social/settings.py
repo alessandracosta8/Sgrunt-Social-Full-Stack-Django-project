@@ -32,7 +32,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    'https://8000-alessandrac-sgruntsocia-3jb9le557o1.ws-eu63.gitpod.io/',
+    'https://git.heroku.com/sgrunt-social.git',
+]
 
 # CSRF Trusted origin for the localhost in GitPod
 CSRF_TRUSTED_ORIGINS = [

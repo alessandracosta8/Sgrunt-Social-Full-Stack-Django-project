@@ -55,27 +55,25 @@ Three iterations were documented within the Github project as Milestones. A Gith
 The website has a simple an minimalistic design, to leave all the user attention on the content written by the users and the images shared. The colours choosen are subtle and in grey tones to leave all the colour brilliance to the images posted.
 
 ### Wireframes
-<details>
-    <summary>Landing Page</summary>
-    ![Landing Page](docs/wireframes/landing_page.png)
-</details>
-<details>
-    <summary>Post List</summary>
-    ![Post List](docs/wireframes/post_list.png)
-</details>
-<details>
-    <summary>Profile</summary>
-    ![Profile](docs/wireframes/profile_page.png)
-</details>
-<details>
-    <summary>Post Detail</summary>
-    ![Post Detail](docs/wireframes/post_detail.png)
-</details>
-<details>
-    <summary>Followers List</summary>
-    ![Followers List](docs/wireframes/followers_list.png)
-</details>
 
+Landing page
+![Landing Page](docs/wireframes/landing_page.png)
+&nbsp;
+
+Post List
+![Post List](docs/wireframes/post_list.png)
+&nbsp;
+
+Profile
+![Profile](docs/wireframes/profile_page.png)
+&nbsp;
+
+Post Detail
+![Post Detail](docs/wireframes/post_detail.png)
+&nbsp;
+
+Followers List
+![Followers List](docs/wireframes/followers_list.png)
 &nbsp;
 
 ## Data Model

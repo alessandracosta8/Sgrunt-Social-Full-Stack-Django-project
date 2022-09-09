@@ -57,23 +57,23 @@ The website has a simple an minimalistic design, to leave all the user attention
 ### Wireframes
 <details>
     <summary>Landing Page</summary>
-    ![Landing Page](docs/wireframes/landing_wireframe.png)
+    ![Landing Page](docs/wireframes/landing_page.png)
 </details>
 <details>
     <summary>Post List</summary>
-    ![Post List](docs/wireframes/landing_wireframe.png)
+    ![Post List](docs/wireframes/post_list.png)
 </details>
 <details>
     <summary>Profile</summary>
-    ![Profile](docs/wireframes/landing_wireframe.png)
+    ![Profile](docs/wireframes/profile_page.png)
 </details>
 <details>
     <summary>Post Detail</summary>
-    ![Post Detail](docs/wireframes/landing_wireframe.png)
+    ![Post Detail](docs/wireframes/post_detail.png)
 </details>
 <details>
     <summary>Followers List</summary>
-    ![Followers List](docs/wireframes/landing_wireframe.png)
+    ![Followers List](docs/wireframes/followers_list.png)
 </details>
 
 &nbsp;

@@ -31,5 +31,4 @@ if settings.DEBUG:
         document_root=settings.MEDIA_ROOT
         )
 
-handler404 = 'sgrunt_social.views.handler404'
-handler500 = 'sgrunt_social.views.handler500'
+handler404 = 'sgrunt_social.views.error_404_view'

@@ -1,16 +1,8 @@
 """ Imports """
-from django.shortcuts import render_to_response
-from django.template import RequestContext
+from django.conf import settings
+from django.shortcuts import redirect
 
 
-def handler404(request, exception, template_name="404.html"):
-    """ 404 handling """
-    response = render_to_response(template_name)
-    response.status_code = 404
-    return response
-
-def handler500(request, exception, template_name="500.html"):
-    """ 500 handling """
-    response = render_to_response(template_name)
-    response.status_code = 500
-    return response
+def error_404_view(request, exception):
+    """ handler of 404 errors """
+    return render(request, '404.html')

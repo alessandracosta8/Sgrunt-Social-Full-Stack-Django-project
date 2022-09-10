@@ -30,6 +30,3 @@ if settings.DEBUG:
         settings.MEDIA_URL,
         document_root=settings.MEDIA_ROOT
         )
-
-handler404 = 'sgrunt_social.views.page_not_found_view'
-handler500 = 'sgrunt_social.views.server_error'

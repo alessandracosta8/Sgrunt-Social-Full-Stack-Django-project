@@ -3,5 +3,10 @@ from django.shortcuts import render
 
 
 def page_not_found_view(request, exception):
-    """ 404 """
-    return render(request, '404.html')
+    """ error 404 handler """
+    return render(request, 'not_found.html')
+
+
+def server_error(request):
+    """ error 500 handler """
+    return render(request, 'server_error.html')

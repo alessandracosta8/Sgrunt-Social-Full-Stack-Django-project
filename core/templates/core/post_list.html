@@ -3,7 +3,7 @@
 
 {% block content %}
 <div class="container">
-    <div class="row">
+    <div class="row my-4">
 
         <!-- Left side column -->
         <!-- ---------------------------- -->
@@ -27,14 +27,14 @@
         <div class="col-6">
             <!-- Post form Title -->
             <div class="row justify-content-center mt-3">
-                <div class="col-md-5 col-sm-12 border-bottom">
+                <div class="border-bottom">
                     <h5>Add a Post!</h5>
                 </div>
             </div>
 
             <!-- Post text area, with Submit button -->
             <div class="row justify-content-center mt-3 mb-5">
-                <div class="col-md-5 col-sm-12">
+                <div>
                     <form method="POST" enctype="multipart/form-data">
                         {% csrf_token %}
                         {{ form | crispy }}
@@ -47,7 +47,7 @@
 
             <!-- Post List Title -->
             <div class="row justify-content-center mt-3">
-                <div class="col-md-5 col-sm-12 border-bottom my-3">
+                <div class="border-bottom my-3">
                     <h5>Recent posts from people you follow:</h5>
                 </div>
             </div>
@@ -55,7 +55,7 @@
             <!-- Iterate post_list variable from the view -->
             {% for post in post_list %}
             <div class="row justify-content-center mt-2">
-                <div class="col-md-5 col-sm-12 position-relative card bg-light mb-3">
+                <div class="position-relative card bg-light mb-3">
                     <!-- Post Author and timestamp -->
                     <div class="mt-3 mb-3 card-header">
                         <h5 class="card-title">

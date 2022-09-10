@@ -21,6 +21,15 @@ The live link can be found here - [Sgrunt Social](https://sgrunt-social.herokuap
     - [Mobile Testing](#mobile-testing)
     - [Fixed Bugs](#fixed-bugs)
     - [Unfixed Bugs](#unfixed-bugs)
+- [Security Features and Defensive Design](#security-features-and-defensive-design)
+    - [User Authentication](#user-authentication)
+    - [Form Validation](#form-validation)
+    - [Custom error pages](#custom-error-pages)
+- [Deploy to Heroku](#deploy-to-heroku)
+    - [Create the Heroku App:](#create-the-heroku-app)
+    - [Attach a Postgres database:](#attach-a-postgres-database)
+    - [Prepare the environment and settings.py file:](#prepare-the-environment-and-settingspy-file)
+    - [Create files and directories](#create-files-and-directories)
 - [Technologies](#technologies)
 - [Credits](#credits)
 
@@ -140,6 +149,77 @@ Every user story has been manually tested.
 - When setting DEBUG = False was setup, error 500 was returned and no content was accessible. Resolved removing incorrect code handling 404 pages errors.
 
 ### Unfixed Bugs
+- Unable to load a custom 404 or 500 page. It returns an "Internal server error".
+
+&nbsp;
+
+## Security Features and Defensive Design
+---
+
+### User Authentication
+- LoginRequiredMixin is used to make sure that any requests to access secure pages by non-authenticated users are redirected to the login page, preventing any unwanted requests.
+- UserPassesTestMixin is used to ensure users can only edit/delete posts and comments for which they are the author. If the user doesn't pass the test they are shown an HTTP 403 Forbidden error.
+
+### Form Validation
+If incorrect or empty data is added to a form, the form won't submit and a warning will appear to the user informing them what field raised the error.
+
+### Custom error pages
+Custom Error Pages were created to give the user more information on the error and to provide them with buttons to guide them back to the site.
+
+- 400 Bad Request - Sgrunt Social is unable to handle this request.
+- 403 Page Forbidden - Looks like you're trying to access forbidden content. Please log out and sign in to the correct account.
+- 404 Page Not Found - The page you're looking for doesn't exist.
+- 500 Server Error - Sgrunt Social is currently unable to handle this request
+
+&nbsp;
+
+## Deploy to Heroku
+To deploy this page to Heroku from its GitHub repository, follow this steps:
+
+### Create the Heroku App:
+- Log in to [Heroku](https://dashboard.heroku.com/apps) or create an account.
+- On the main page click the button labelled New in the top right corner and from the drop-down menu select "Create New App".
+- Enter a unique and meaningful app name.
+- Next select your region.
+- Click on the Create App button.
+
+### Attach a Postgres database:
+- In the Resources tab, under add-ons, type in Postgres and select the Heroku Postgres option.
+- Copy the DATABASE_URL located in Config Vars in the Settings Tab.
+
+### Prepare the environment and settings.py file:
+- In your GitPod workspace, create an env.py file in the main directory.
+- Add the DATABASE_URL value and your chosen SECRET_KEY value to the env.py file.
+- Update the settings.py file to import the env.py file and add the SECRETKEY and DATABASE_URL file paths.
+- Comment out the default database configuration.
+- Save files and make migrations.
+- Add the CLOUDINARY_USERNAME, CLOUDINARY_API_KEY, CLOUDINARY_API_SECRET values to your env.py file.
+- Add the cloudinary libraries to the list of installed apps.
+- Add the STATIC files settings - the url, storage path, directory path, root path, media url and default file storage path.
+- Link the file to the templates directory in Heroku.
+- Change the templates directory to TEMPLATES_DIR
+- Add Heroku to the ALLOWED_HOSTS list the format ['app_name.heroku.com', 'localhost']
+
+### Create files and directories
+- Create requirements.txt file
+- Create three directories in the main directory; media, storage and templates.
+- Create a file named "Procfile" in the main directory and add the following: web: gunicorn project-name.wsgi:application
+
+### Update Heroku Config Vars
+Make sure the following Config Vars in Heroku are setup as well as in the env.py file:
+- DATABASE_URL
+- SECRET_KEY value 
+- CLOUDINARY_USERNAME
+- CLOUDINARY_API_KEY
+- CLOUDINARY_API_SECRET
+- PORT = 8000
+- DISABLE_COLLECTSTATIC = 1
+
+### Deploy
+- NB: Ensure in Django settings, DEBUG is False
+- Go to the deploy tab on Heroku and connect to GitHub, then to the required repository. 
+- Scroll to the bottom of the deploy page and either click Enable Automatic Deploys for automatic deploys or Deploy Branch to deploy manually. Manually deployed branches will need re-deploying each time the repo is updated.
+- Click View to view the deployed site.
 
 
 &nbsp;

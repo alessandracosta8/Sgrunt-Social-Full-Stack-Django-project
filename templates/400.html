@@ -1,0 +1,21 @@
+{% extends 'landing/base.html' %}
+
+{% block content %}
+<div class="container">
+    <!-- back home button -->
+    <div class="row mt-5">
+        <div class="col-md-5 col-sm-6">
+            <a href="{% url '' %}" class="btn btn-light">Back To Homepage</a>
+        </div>
+    </div>
+
+    <!-- 404 message -->
+    <div class="row justify-content-center mt-3">
+        <div class="col-md-5 col-sm-12">
+            <h2>400 - Bad request</h2>
+            <p>
+                Sgrunt Social is unable to handle this request.
+            </p>
+        </div>
+</div>
+{% endblock content %}

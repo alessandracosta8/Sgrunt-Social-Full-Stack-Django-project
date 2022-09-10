@@ -113,7 +113,9 @@ The diagram below details the database schema.
 
 ### Bugs
 - When setting DEBUG = False was setup, error 500 was returned and no content was accessible.
-- When deployed to Heroku, all images uploaded to the posts disappear after some time.
+
+### Fixed Bugs
+- When deployed to Heroku, all images uploaded to the posts disappear after some time. Resolved: Setting up  Cloudinary to handle images.
 
 &nbsp;
 
@@ -146,3 +148,4 @@ The diagram below details the database schema.
 - [Lucidchart](https://lucid.app/documents#/dashboard) - used to create the database schema design
 - [Figma](https://www.figma.com/) - used to create wireframes
 - [Deployment Checklist Tutorial](https://www.youtube.com/watch?v=mAeK4Ia4fk8)
+- [Cloudinary integration](https://www.section.io/engineering-education/uploading-images-to-cloudinary-from-django-application/)

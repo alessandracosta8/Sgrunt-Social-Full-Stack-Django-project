@@ -37,7 +37,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     'sgrunt-social.herokuapp.com',
-    'alessandrac-sgruntsocia-3jb9le557o1.ws-eu64.gitpod.io'
+    'localhost'
     ]
 
 # CSRF Trusted origin for the localhost in GitPod

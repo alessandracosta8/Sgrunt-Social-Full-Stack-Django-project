@@ -191,7 +191,7 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 # Login page will redirect to index page
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 LOGIN_URL = '/accounts/login/'
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'post-list'
 
 # Set Email as required field in form
 ACCOUNT_EMAIL_REQUIRED = True

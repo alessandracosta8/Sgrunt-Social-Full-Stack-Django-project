@@ -113,6 +113,7 @@ The diagram below details the database schema.
 
 ### Bugs
 - When setting DEBUG = False was setup, error 500 was returned and no content was accessible.
+- When deployed to Heroku, all images uploaded to the posts disappear after some time.
 
 &nbsp;
 

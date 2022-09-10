@@ -8,7 +8,6 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from django.views import View
 from django.views.generic.edit import UpdateView, DeleteView
-from django.shortcuts import get_object_or_404
 from .models import Post, Comment, UserProfile
 from .forms import PostForm, CommentForm
 
@@ -58,7 +57,7 @@ class PostDetailView(LoginRequiredMixin, View):
     """ specific post page with its comments """
     def get(self, request, pk, *args, **kwargs):
         """ retrieves post and relative comments """
-        post = get_object_or_404(Post, pk=pk)
+        post = Post.objects.get(pk=pk)
         form = CommentForm()
         comments = Comment.objects.filter(post=post).order_by('-created_on')
 

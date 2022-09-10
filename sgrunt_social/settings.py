@@ -15,6 +15,9 @@ import os
 import sys
 import django_heroku
 import dj_database_url
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 if os.path.isfile('env.py'):
     import env
@@ -33,7 +36,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'sgrunt-social.herokuapp.com', 'localhost']
+    'sgrunt-social.herokuapp.com',
+    'alessandrac-sgruntsocia-3jb9le557o1.ws-eu64.gitpod.io'
+    ]
 
 # CSRF Trusted origin for the localhost in GitPod
 CSRF_TRUSTED_ORIGINS = [
@@ -65,6 +70,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'cloudinary',
 ]
 
 SITE_ID = 1
@@ -156,7 +162,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 django_heroku.settings(locals())
 
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = BASE_DIR / 'media/'
 MEDIA_URL = '/media/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

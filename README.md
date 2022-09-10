@@ -111,6 +111,8 @@ The diagram below details the database schema.
 ## Testing
 ---
 
+### Bugs
+- When setting DEBUG = False was setup, error 500 was returned and no content was accessible.
 
 &nbsp;
 

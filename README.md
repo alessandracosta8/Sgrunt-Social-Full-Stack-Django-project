@@ -139,6 +139,7 @@ Every user story has been manually tested.
 
 ### Unfixed Bugs
 - When setting DEBUG = False was setup, error 500 was returned and no content was accessible.
+- When a new user Signs Up the websites returns error 500, but in reality the user has been created and they can login as normal.
 &nbsp;
 
 ## Technologies

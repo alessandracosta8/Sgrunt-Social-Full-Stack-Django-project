@@ -51,7 +51,7 @@ class UserProfile(models.Model):
     bio = models.TextField(max_length=500, blank=True, null=True)
     birth_date = models.DateField(null=True, blank=True)
     location = models.CharField(max_length=100, blank=True, null=True)
-    picture = models.CloudinaryField(
+    picture = CloudinaryField(
         'picture',
         default='uploads/profile_pictures/default.png',
         blank=True

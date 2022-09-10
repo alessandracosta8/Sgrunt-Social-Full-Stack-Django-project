@@ -188,8 +188,8 @@ SECURE_HSTS_PRELOAD = True
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
 # Login page will redirect to index page
-LOGIN_REDIRECT_URL = 'post-list'
 LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/'
 
 # Set Email as required field in form
 ACCOUNT_EMAIL_REQUIRED = True

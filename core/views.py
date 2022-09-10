@@ -57,7 +57,7 @@ class PostDetailView(LoginRequiredMixin, View):
     """ specific post page with its comments """
     def get(self, request, pk, *args, **kwargs):
         """ retrieves post and relative comments """
-        post = Post.objects.get(pk=pk)
+        post = get_object_or_404(Post, pk=pk)
         form = CommentForm()
         comments = Comment.objects.filter(post=post).order_by('-created_on')
 

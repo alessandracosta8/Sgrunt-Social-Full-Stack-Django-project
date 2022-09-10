@@ -32,11 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    'localhost',
-    'https://git.heroku.com/sgrunt-social.git',
-    'https://sgrunt-social.herokuapp.com/',
-]
+ALLOWED_HOSTS = ['*']
 
 # CSRF Trusted origin for the localhost in GitPod
 CSRF_TRUSTED_ORIGINS = [
@@ -163,6 +159,18 @@ MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+# HTTPS settings
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
+
+
+# HSTS settings
+SECURE_HSTS_SECONDS = 31536000  # 1 year
+SECURE_HSTS_PRELOAD = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
 # Login page will redirect to index page
 LOGIN_REDIRECT_URL = 'post-list'

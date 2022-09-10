@@ -144,3 +144,4 @@ The diagram below details the database schema.
 - [Heroku deployment](https://www.youtube.com/watch?v=XZoTukqekzY)
 - [Lucidchart](https://lucid.app/documents#/dashboard) - used to create the database schema design
 - [Figma](https://www.figma.com/) - used to create wireframes
+- [Deployment Checklist Tutorial](https://www.youtube.com/watch?v=mAeK4Ia4fk8)

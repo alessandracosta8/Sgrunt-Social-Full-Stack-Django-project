@@ -14,6 +14,13 @@ The live link can be found here - [Sgrunt Social](https://sgrunt-social.herokuap
     - [User Stories](#user-stories)
 - [Design](#design)
 - [Data Model](#data-model)
+- [Testing](#testing)
+    - [User Stories testing](#user-stories-testing)
+    - [Validation](#validation)
+    - [Desktop Browsers Testing](#desktop-browsers-testing)
+    - [Mobile Testing](#mobile-testing)
+    - [Fixed Bugs](#fixed-bugs)
+    - [Unfixed Bugs](#unfixed-bugs)
 - [Technologies](#technologies)
 - [Credits](#credits)
 
@@ -111,12 +118,27 @@ The diagram below details the database schema.
 ## Testing
 ---
 
-### Bugs
-- When setting DEBUG = False was setup, error 500 was returned and no content was accessible.
+### User Stories testing
+Every user story has been manually tested.
+
+### Validation
+- All HTML pages were run through the [W3C HTML Validator](https://validator.w3.org/).
+- All CSS files were validated through the official [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+- All JavaScript was validated through [Jshint](https://jshint.com/)
+- All Python files were run through [Pep8](http://pep8online.com/) with no errors found.
+- Lighthouse validation was run on all pages (both mobile and desktop) in order to check accessibility and performance.
+
+### Desktop Browsers Testing
+- The Website was tested on Google Chrome, Firefox, on Windows OS and Google Chrome, Firefox and Safari on MacOs with no issues noted. 
+
+### Mobile Testing
+- The website was viewed on a variety of devices such as iPhone 13 Pro, iPhone 13 Pro Max, iPhoneXR, Google Pixel 4, iPhone SE and iPad to ensure responsiveness on various screen sizes in both portrait and landscape mode. The website performed as intended. The responsive design was also checked using Chrome developer tools across multiple devices with structural integrity holding for the various sizes.
 
 ### Fixed Bugs
 - When deployed to Heroku, all images uploaded to the posts disappear after some time. Resolved: Setting up  Cloudinary to handle images.
 
+### Unfixed Bugs
+- When setting DEBUG = False was setup, error 500 was returned and no content was accessible.
 &nbsp;
 
 ## Technologies
@@ -149,3 +171,4 @@ The diagram below details the database schema.
 - [Figma](https://www.figma.com/) - used to create wireframes
 - [Deployment Checklist Tutorial](https://www.youtube.com/watch?v=mAeK4Ia4fk8)
 - [Cloudinary integration](https://www.section.io/engineering-education/uploading-images-to-cloudinary-from-django-application/)
+- [Example of excellent readme file from AliOKeeffe](https://github.com/AliOKeeffe/PP4_My_Meal_Planner/blob/main/TESTING.md#device-testing)

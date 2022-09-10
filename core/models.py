@@ -53,7 +53,7 @@ class UserProfile(models.Model):
     location = models.CharField(max_length=100, blank=True, null=True)
     picture = CloudinaryField(
         'picture',
-        default='uploads/profile_pictures/default.png',
+        default='https://res.cloudinary.com/alessandracosta8/image/upload/v1662812379/default_profile_picture_id2iuq.png',
         blank=True
         )
     followers = models.ManyToManyField(

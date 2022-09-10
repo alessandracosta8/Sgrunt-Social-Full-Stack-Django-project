@@ -1,8 +1,7 @@
 """ Imports """
-from django.conf import settings
-from django.shortcuts import redirect
+from django.shortcuts import render
 
 
-def error_404_view(request, exception):
-    """ handler of 404 errors """
-    return render(request, '404.html')
+def page_not_found_view(request, exception):
+    """ 404 customer error view """
+    return render(request, '404.html', status=404)

@@ -8,6 +8,7 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 from django.views import View
 from django.views.generic.edit import UpdateView, DeleteView
+from django.shortcuts import get_object_or_404
 from .models import Post, Comment, UserProfile
 from .forms import PostForm, CommentForm
 

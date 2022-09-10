@@ -30,6 +30,11 @@ The live link can be found here - [Sgrunt Social](https://sgrunt-social.herokuap
     - [Attach a Postgres database:](#attach-a-postgres-database)
     - [Prepare the environment and settings.py file:](#prepare-the-environment-and-settingspy-file)
     - [Create files and directories](#create-files-and-directories)
+    - [Update Heroku Config Vars](#update-heroku-config-vars)
+    - [Deploy](#deploy)
+- [Forking this repository](#forking-this-repository)
+- [Cloning this repository](#cloning-this-repository)
+- [Languages](#languages)
 - [Technologies](#technologies)
 - [Credits](#credits)
 
@@ -174,6 +179,7 @@ Custom Error Pages were created to give the user more information on the error a
 &nbsp;
 
 ## Deploy to Heroku
+---
 To deploy this page to Heroku from its GitHub repository, follow this steps:
 
 ### Create the Heroku App:
@@ -220,7 +226,38 @@ Make sure the following Config Vars in Heroku are setup as well as in the env.py
 - Go to the deploy tab on Heroku and connect to GitHub, then to the required repository. 
 - Scroll to the bottom of the deploy page and either click Enable Automatic Deploys for automatic deploys or Deploy Branch to deploy manually. Manually deployed branches will need re-deploying each time the repo is updated.
 - Click View to view the deployed site.
+- The website will be live.
 
+&nbsp;
+
+## Forking this repository
+---
+- Locate the repository at this link [Sgrunt Social](https://github.com/alessandracosta8/sgrunt-social).
+- At the top of the repository, on the right side of the page, select "Fork" from the buttons available. 
+- A copy of the repository is now created.
+
+&nbsp;
+
+## Cloning this repository
+---
+To clone this repository follow the below steps: 
+
+1. Locate the repository at this link [Sgrunt Social](https://github.com/alessandracosta8/sgrunt-social).
+2. Under **'Code'**, see the different cloning options, HTTPS, SSH, and GitHub CLI. Click the prefered cloning option, and then copy the link provided. 
+3. Open **Terminal**.
+4. In Terminal, change the current working directory to the desired location of the cloned directory.
+5. Type **'git clone'**, and then paste the URL copied from GitHub earlier. 
+6. Type **'Enter'** to create the local clone.
+
+&nbsp;
+
+## Languages
+---
+
+- HTML
+- CSS
+- Javascript
+- Python
 
 &nbsp;
 
@@ -230,28 +267,38 @@ Make sure the following Config Vars in Heroku are setup as well as in the env.py
 - [Notion](https://notion.so/) - for notes taking and tasks manager.
 - [GitPod](https://gitpod.io/) - as development environment.
 - [Heroku](https://heroku.com/) - as cloud based platform to deploy the web app on.
+- [Django](https://www.djangoproject.com/) - Main python framework used in the development of this project
 - [PostgreSQL](https://postgresql.org/) - as database.
 - [DJ database url](https://pypi.org/project/dj-database-url/) - database setup.
 - [Psycopg](https://pypi.org/project/psycopg2/) - PostgreSQL database adapter for Python.
 - [Django AllAuth](https://django-allauth.readthedocs.io/en/latest/installation.html) - for authentication of users.
 - [Django Crisy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) - for forms styling.
+- [Cloudinary](https://cloudinary.com/) - the image hosting service used to upload images
+- [Bootstrap 5](https://getbootstrap.com/docs/5.2/getting-started/introduction/) - CSS Framework
+- [Chrome Dev Tools](https://developer.chrome.com/docs/devtools/) - Used for overall development and testing of responsiveness and performance.
+- [Figma](https://www.figma.com/) - used to create wireframes.
+- [FontAwsome Icons](https://fontawesome.com/)
+- [W3C](https://www.w3.org/) - Used for HTML & CSS Validation.
+- [Jshint](https://jshint.com/) - used to validate javascript.
+- [PEP8 Online](http://pep8online.com/) - used to validate all the Python code.
 
 
 ## Credits
 ---
-- Code Institute tutor support for all the support they provided.
+- Code Institute tutors for all the support they provided.
 - [Django AllAuth Templates](https://github.com/pennersr/django-allauth)
 - [Django Documentation](https://docs.djangoproject.com/en/4.1/)
 - [Mozilla Django Testing Tutorials](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Testing)
 - [Django testing tutorials](https://www.youtube.com/watch?v=qwypH3YvMKc&list=PLbpAWbHbi5rMF2j5n6imm0enrSD9eQUaM)
 - [PyLint tutorial](https://www.youtube.com/watch?v=w6bRHNC7Kuc&t=30s)
+- [Code Institute - Blog Walkthrough Project](https://github.com/Code-Institute-Solutions/Django3blog)
 - [Django social media app tutorial](https://www.youtube.com/playlist?list=PLPSM8rIid1a3TkwEmHyDALNuHhqiUiU5A)
 - [Unsplash free stock photos](https://unsplash.com/)
-- [FontAwsome Icons](https://fontawesome.com/)
 - [Django quering (Q)](https://docs.djangoproject.com/en/3.1/topics/db/queries/)
 - [Heroku deployment](https://www.youtube.com/watch?v=XZoTukqekzY)
-- [Lucidchart](https://lucid.app/documents#/dashboard) - used to create the database schema design
-- [Figma](https://www.figma.com/) - used to create wireframes
+- [Lucidchart](https://lucid.app/documents#/dashboard) - used to create the database schema design.
+- [Favicon](https://favicon.io/) - Used to create the favicon.
 - [Deployment Checklist Tutorial](https://www.youtube.com/watch?v=mAeK4Ia4fk8)
 - [Cloudinary integration](https://www.section.io/engineering-education/uploading-images-to-cloudinary-from-django-application/)
 - [Example of excellent readme file from AliOKeeffe](https://github.com/AliOKeeffe/PP4_My_Meal_Planner/blob/main/TESTING.md#device-testing)
+- [Grammarly](https://app.grammarly.com/) - for grammar and mistyping corrections.

@@ -305,8 +305,3 @@ class ListFollowers(View):
         }
 
         return render(request, 'core/followers_list.html', context)
-
-
-def error_404(request, exception):
-    """ 404 error handler """
-    return render(request, '404.html')

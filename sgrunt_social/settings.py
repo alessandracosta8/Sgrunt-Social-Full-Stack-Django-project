@@ -33,9 +33,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'localhost',
-    'heroku.com',
-    'www.heroku.com'
+    'sgrunt-social.herokuapp.com',
+    'localhost'
 ]
 
 # CSRF Trusted origin for the localhost in GitPod

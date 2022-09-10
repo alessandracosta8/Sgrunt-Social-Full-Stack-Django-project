@@ -136,10 +136,12 @@ Every user story has been manually tested.
 
 ### Fixed Bugs
 - When deployed to Heroku, all images uploaded to the posts disappear after some time. Resolved: Setting up  Cloudinary to handle images.
+- When a new user Signs Up the websites returns error 500, but in reality the user has been created and they can login as normal. Resolved correcting the settings of the login pages resirect and email verification.
+- When setting DEBUG = False was setup, error 500 was returned and no content was accessible. Resolved removing incorrect code handling 404 pages errors.
 
 ### Unfixed Bugs
-- When setting DEBUG = False was setup, error 500 was returned and no content was accessible.
-- When a new user Signs Up the websites returns error 500, but in reality the user has been created and they can login as normal.
+
+
 &nbsp;
 
 ## Technologies

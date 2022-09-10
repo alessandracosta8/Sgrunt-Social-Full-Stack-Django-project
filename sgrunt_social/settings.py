@@ -42,7 +42,7 @@ ALLOWED_HOSTS = [
 
 # CSRF Trusted origin for the localhost in GitPod
 CSRF_TRUSTED_ORIGINS = [
-    'https://8000-alessandrac-sgruntsocia-3jb9le557o1.ws-eu63.gitpod.io',
+    'https://8000-alessandrac-sgruntsocia-3jb9le557o1.ws-eu64.gitpod.io',
     ]
 
 
@@ -166,6 +166,14 @@ MEDIA_ROOT = BASE_DIR / 'media/'
 MEDIA_URL = '/media/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+# adding config for cloudinary
+cloudinary.config( 
+  cloud_name=os.environ.get('CLOUDINARY_USERNAME'),
+  api_key=os.environ.get('CLOUDINARY_API_KEY'),
+  api_secret=os.environ.get('CLOUDINARY_API_SECRET')
+)
 
 
 # HTTPS settings

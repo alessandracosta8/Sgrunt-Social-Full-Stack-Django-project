@@ -297,7 +297,6 @@ To clone this repository follow the below steps:
 - [Django quering (Q)](https://docs.djangoproject.com/en/3.1/topics/db/queries/)
 - [Heroku deployment](https://www.youtube.com/watch?v=XZoTukqekzY)
 - [Lucidchart](https://lucid.app/documents#/dashboard) - used to create the database schema design.
-- [Favicon](https://favicon.io/) - Used to create the favicon.
 - [Deployment Checklist Tutorial](https://www.youtube.com/watch?v=mAeK4Ia4fk8)
 - [Cloudinary integration](https://www.section.io/engineering-education/uploading-images-to-cloudinary-from-django-application/)
 - [Example of excellent readme file from AliOKeeffe](https://github.com/AliOKeeffe/PP4_My_Meal_Planner/blob/main/TESTING.md#device-testing)

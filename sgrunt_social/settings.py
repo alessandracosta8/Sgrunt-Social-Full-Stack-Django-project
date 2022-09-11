@@ -37,7 +37,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     'sgrunt-social.herokuapp.com',
-    'http://127.0.0.1:8000/',
+    'www.sgrunt-social.herokuapp.com',
     'localhost'
     ]
 
@@ -91,7 +91,7 @@ ROOT_URLCONF = 'sgrunt_social.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [BASE_DIR / 'templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -200,3 +200,18 @@ ACCOUNT_EMAIL_REQUIRED = True
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Logging configuration to log to the console
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'WARNING',
+    },
+}

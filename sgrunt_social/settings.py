@@ -201,7 +201,7 @@ ACCOUNT_EMAIL_REQUIRED = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Logging configuration to log to the console
+# Logging configuration to log to the console when DEBUG=False
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -215,3 +215,5 @@ LOGGING = {
         'level': 'WARNING',
     },
 }
+
+ADMINS = [('Alessandra', 'alessandracosta8@gmail.com'), ]

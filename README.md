@@ -1,8 +1,8 @@
 # Sgrunt Social
 
-Sgrunt social is a social network dedicated to share news and articles and allow the users to share their opinion and ideas about it. The app is targeted to towards people that enjoy commenting and sharing their ideas about what is going on in the world.
+Sgrunt Social is a social network dedicated to sharing news and articles and allowing users to share their opinion and ideas about it. The app is targeted toward people that enjoy commenting and sharing their ideas about what is going on in the world.
 
-The name of the app comes from the tipical expression from classic comic books, when the carachters wanted to express their disappointment.
+The name of the app comes from the typical expression from classic comic books when the characters wanted to express their disappointment.
 
 The live link can be found here - [Sgrunt Social](https://sgrunt-social.herokuapp.com/)
 
@@ -42,7 +42,7 @@ The live link can be found here - [Sgrunt Social](https://sgrunt-social.herokuap
 
 ## Agile Methodology
 ---
-Github projects was used to manage the development process using an agile approach. Please see link to project board [here](https://github.com/users/alessandracosta8/projects/3)
+Github projects were used to manage the development process using an agile approach. You can find the link to the project board [here](https://github.com/users/alessandracosta8/projects/3)
 Three iterations were documented within the Github project as Milestones. A Github Issue was created for each User Story which was then allocated to an Iteration and rated according to their importance and urgency.
 
 ### User Stories
@@ -68,12 +68,13 @@ Three iterations were documented within the Github project as Milestones. A Gith
 
 #### Epic: Future Features
 - As a **User** I can **login with Apple or Google account** so that **I can signup without creating an account**.
+- As a **User** I can **use and review tags on posts** so that **I can emplore what other users are sharing on a particular topic, or share on it myself**.
 
 &nbsp;
 
 ## Design
 ---
-The website has a simple an minimalistic design, to leave all the user attention on the content written by the users and the images shared. The colours choosen are subtle and in grey tones to leave all the colour brilliance to the images posted.
+The website has a simple and minimalistic design, to leave all the user's attention on the content written by the users and the images shared. The colours chosen are subtle and in grey tones to leave all the colour brilliance to the images posted.
 
 ### Wireframes
 
@@ -115,13 +116,13 @@ I used principles of Object-Oriented Programming throughout this project and Dja
 Django AllAuth was used for the user authentication system.
 
 In order to create the social network various models were required: the post, comment and user profile.
-The author is a foreign key that is shared in-between the post and comment model. All of the models are based on the use of the generic User model from Django.
+The author is a foreign key that is shared in between the post and comment model. All of the models are based on the use of the generic User model from Django.
 
-The Post model in specific has multiples fields which allow the post to have amongst its features: likes, dislikes and images attached. In particular two views are put in place (AddLike and AddDislike), which will manage the like functionality so that a post that is dislked cannot be liked at the same time and viceversa.
+The Post model in specific has multiple fields which allow to the post to have amongst its features: likes, dislikes and images attached. In particular two views are put in place (AddLike and AddDislike), which will manage the like functionality so that a post that is disliked cannot be liked at the same time and vice versa.
 
 The Comment model is a more simple model taking as the foreign keys the post it is related to and the author of the comment itself.
 
-The UserProfile model takes the User model as base structure and attaches the various details needed, including a profile picture that the user can upload and the list of followers the user currently has.
+The UserProfile model takes the User model as the base structure and attaches the various details needed, including a profile picture that the user can upload and the list of followers the user currently has.
 
 The diagram below details the database schema.
 
@@ -143,18 +144,18 @@ Every user story has been manually tested.
 - Lighthouse validation was run on all pages (both mobile and desktop) in order to check accessibility and performance.
 
 ### Desktop Browsers Testing
-- The Website was tested on Google Chrome, Firefox, on Windows OS and Google Chrome, Firefox and Safari on MacOs with no issues noted. 
+- The Website was tested on Google Chrome, Firefox, Windows OS and Google Chrome, Firefox and Safari on macOs with no issues noted. 
 
 ### Mobile Testing
-- The website was viewed on a variety of devices such as iPhone 13 Pro, iPhone 13 Pro Max, iPhoneXR, Google Pixel 4, iPhone SE and iPad to ensure responsiveness on various screen sizes in both portrait and landscape mode. The website performed as intended. The responsive design was also checked using Chrome developer tools across multiple devices with structural integrity holding for the various sizes.
+- The website was viewed on a variety of devices such as iPhone 13 Pro, iPhone 13 Pro Max, iPhone XR, Google Pixel 4, iPhone SE and iPad to ensure responsiveness on various screen sizes in both portrait and landscape mode. The website performed as intended. The responsive design was also checked using Chrome developer tools across multiple devices with structural integrity holding for the various sizes.
 
 ### Fixed Bugs
 - When deployed to Heroku, all images uploaded to the posts disappear after some time. Resolved: Setting up  Cloudinary to handle images.
-- When a new user Signs Up the websites returns error 500, but in reality the user has been created and they can login as normal. Resolved correcting the settings of the login pages resirect and email verification.
-- When setting DEBUG = False was setup, error 500 was returned and no content was accessible. Resolved removing incorrect code handling 404 pages errors.
+- When a new user Signs Up the website returns error 500, but in reality, the user has been created and they can login as normal. Resolved correcting the settings of the login pages redirect and email verification.
+- When setting DEBUG = False was set up, error 500 was returned and no content was accessible. Resolved removing incorrect code handling 404 pages errors.
 
 ### Unfixed Bugs
-- Unable to load a custom 404 or 500 page. It returns an "Internal server error".
+- Unable to load a custom 404 or 500 page. It returns an "Internal server error". Currently non resolved.
 
 &nbsp;
 
@@ -180,7 +181,7 @@ Custom Error Pages were created to give the user more information on the error a
 
 ## Deploy to Heroku
 ---
-To deploy this page to Heroku from its GitHub repository, follow this steps:
+To deploy this page to Heroku from its GitHub repository, follow these steps:
 
 ### Create the Heroku App:
 - Log in to [Heroku](https://dashboard.heroku.com/apps) or create an account.

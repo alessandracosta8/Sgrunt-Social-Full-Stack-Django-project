@@ -6,6 +6,8 @@ The name of the app comes from the typical expression from classic comic books w
 
 The live link can be found here - [Sgrunt Social](https://sgrunt-social.herokuapp.com/)
 
+![Sgrunt Social Home Page](/media/sgrunt_social_home_page.png)
+
 &nbsp;
 
 ## Table of Contents
